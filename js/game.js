@@ -19,7 +19,7 @@ choices.forEach(choice => {
 });
 
 async function updateScore(playerScore, computerScore) {
-  const response = await fetch("score.json");
+  const response = await fetch('score.json');
   const score = await response.json();
   score.player += playerScore;
   score.computer += computerScore;
@@ -30,11 +30,11 @@ async function updateScore(playerScore, computerScore) {
     },
     body: JSON.stringify(score)
   };
-  const putResponse = await fetch("score.json", putOptions);
+  const putResponse = await fetch('score.json', putOptions);
 }
 
 async function showScore() {
-  const response = await fetch("score.json");
+  const response = await fetch('score.json');
   const score = await response.json();
   console.log(`Score: Player ${score.player} - Computer ${score.computer}`);
 }
